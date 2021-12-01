@@ -32,3 +32,7 @@ Template_Login/build/classes/it/unibo/tw/servlets/RegistrazioneServlet.class
 Template_Login/build/exploded/Template_Login/META-INF/MANIFEST.MF
 Template_Login/build/exploded/Template_Login/WEB-INF/classes/it/unibo/tw/beans/Utente.class
 *.class
+*.class
+*.war
+*.MF
+*.xml

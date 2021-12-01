@@ -4,7 +4,7 @@
 <web-app>
 <!-- 1) General -->
 <!-- Name the application -->
-<display-name>02_TecWeb</display-name>
+<display-name>Template_Login</display-name>
 <description> A servlet-based project to use
 as a template for your owns </description>
 <!-- 2) Servlets -->
