@@ -1,4 +1,4 @@
-package it.unibo.tw.servlets;
+/*package it.unibo.tw.servlets;
 
 import it.tecnologieweb.app.HelloWorld;
 
@@ -49,7 +49,7 @@ public class HelloWorldServlet extends HttpServlet {
 	    	/*
 	    	 * Requests are served by invoking library functions
 	    	 * and returning html-wrapped results 
-	    	 */
+	    	 
 	        String output = new HelloWorld(name).sayIt();
 	        out.println("<i>"+ output + "</i>");
 
@@ -70,3 +70,4 @@ public class HelloWorldServlet extends HttpServlet {
     }
 
 }
+*/

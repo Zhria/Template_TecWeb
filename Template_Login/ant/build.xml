@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="02_TecWeb" basedir=".." default="02.print.properties">
+<project name="Template_Login" basedir=".." default="02.print.properties">
 
 	<!-- ================ -->
 	<!-- Properties setup -->

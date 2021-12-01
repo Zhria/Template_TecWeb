@@ -44,13 +44,13 @@ public class LoginServlet extends HttpServlet {
 					utenti.findUtente(username, password).setAdmin(true);
 				}
 				utenti.findUtente(username, password).setLogged(true);
-				resp.sendRedirect("URL"); //DA MODIFICARE
+				resp.sendRedirect("/pages/welcome.jsp"); //DA MODIFICARE
 			}
 			else {
 				out.print("Password Errata!");
 				tentativi++;
 				if(tentativi>=numMaxTentativi) {
-					resp.sendRedirect("PAGINA DI ERRORE"); //DA MODIFICARE
+					resp.sendRedirect("/pages/access_denied.html"); //DA MODIFICARE
 				}
 				else {
 					utenti.findUtente(username, password).setTentativi(tentativi);

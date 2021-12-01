@@ -39,7 +39,7 @@ public class RegistrazioneServlet extends HttpServlet {
 			//check for not used username
 			if(!username.equals("username1")) {
 				UtentiDB utenti = new UtentiDB();
-				utenti.addUtente(username, password);
+				utenti.addUtente("",username, password,0);
 				utenti.findUtente(username, password).setLogged(true);		
 				resp.sendRedirect("pages/welcome.jsp");//to redirect response to another resource, it may be servlet, jsp or html file.
 			}
