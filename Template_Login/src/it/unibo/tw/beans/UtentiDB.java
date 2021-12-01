@@ -33,7 +33,7 @@ public class UtentiDB {
 	
 	public boolean isUtente(String username, String password) {
 		boolean res=false;
-		if(this.findUtente(username, password)!=null) res=false;
+		if(this.findUtente(username, password)==null) res=false;
 		else res=true;
 		return res;
 	}

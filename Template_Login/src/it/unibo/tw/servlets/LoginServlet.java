@@ -44,13 +44,13 @@ public class LoginServlet extends HttpServlet {
 					utenti.findUtente(username, password).setAdmin(true);
 				}
 				utenti.findUtente(username, password).setLogged(true);
-				resp.sendRedirect("/pages/welcome.jsp"); //DA MODIFICARE
+				resp.sendRedirect("pages/welcome.jsp"); //DA MODIFICARE
 			}
 			else {
 				out.print("Password Errata!");
 				tentativi++;
 				if(tentativi>=numMaxTentativi) {
-					resp.sendRedirect("/pages/access_denied.html"); //DA MODIFICARE
+					resp.sendRedirect("pages/access_denied.html"); //DA MODIFICARE
 				}
 				else {
 					utenti.findUtente(username, password).setTentativi(tentativi);
@@ -58,10 +58,10 @@ public class LoginServlet extends HttpServlet {
 			}
 		}
 		else {
-			
-			RequestDispatcher requestDispatcher = req.getRequestDispatcher("PAGINA LOGIN");
+			out.print("<p><strong>Non esiste questo utente<strong><p/><br/><br/>");
+			RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/login.jsp");
 			requestDispatcher.include(req, resp);
-			out.print("<p><strong>Non esiste questo utente<strong></p>");
+			
 		}
 		
 		
