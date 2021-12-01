@@ -12,6 +12,8 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="-1" />
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+		<link type="text/css" href="styles/iframe.css" rel="stylesheet"></link>
 </head>
 
 <!-- //da fare con <iframe src= width= height= >-->
