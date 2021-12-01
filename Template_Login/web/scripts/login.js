@@ -1,7 +1,7 @@
 function callLogin(){
 	var data={
-		username: $("#username").value,
-		password: $("#password").value
+		username: $("[name=username]").val(),
+		password: $("[name=password]").val()
 		//email:
 	}
 
