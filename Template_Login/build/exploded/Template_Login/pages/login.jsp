@@ -12,6 +12,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="-1" />
     <title>Login</title>
+    <script src="<%=request.getContextPath()%>/scripts/utils/jquery-3.6.0.min.js"></script><!-- libreria jquery -->
     <script src="<%=request.getContextPath()%>/scripts/login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><!-- libreria jquery -->
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/default.css" type="text/css" />
