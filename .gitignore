@@ -38,3 +38,4 @@ Template_Login/build/exploded/Template_Login/WEB-INF/classes/it/unibo/tw/beans/U
 *.xml
 *.war
 *.class
+*.class
