@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="lib/junit4_4.3.1.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="lib/soap.jar"/>
+	<classpathentry kind="lib" path="C:/Users/zecca/Documents/GitHub/Template_TecWeb/Template_Login/lib/gson-2.2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

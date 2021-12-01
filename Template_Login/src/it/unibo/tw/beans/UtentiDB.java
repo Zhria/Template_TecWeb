@@ -9,19 +9,17 @@ public class UtentiDB {
 	
     public UtentiDB() {
     	this.utenti =new ArrayList<Utente>();
-    	Utente u = new Utente("username1","password1");
+    	Utente u = new Utente("admin@admin.it","admin","admin",-1);
     	this.utenti.add(u);
-    	u=new Utente("admin","admin");
-    	this.utenti.add(u);
-    	u=new Utente("u2","p2");
-    	this.utenti.add(u);
+    	
     }
+    
 	public List<Utente> getUtenti() {
 		return utenti;
 	}
 	
-	public void addUtente(String username, String password) {
-		this.utenti.add(new Utente(username, password));
+	public void addUtente(String email, String username, String password, int gruppo) {
+		this.utenti.add(new Utente(email,username, password,gruppo));
 	}
 	
 	public Utente findUtente(String username, String password) {
