@@ -41,7 +41,7 @@
     }else{
 %>
  <h1>Log in utente</h1>
-    <form id="login" action="loginservlet" method="post">
+    <form id="login" action="<%=request.getContextPath()%>/loginservlet" method="post">
         Username: <input type="text" name="username" value=""><br>
         Password: <input type="password" name="password" value=""><br>
         <input type="submit" name="submit" value="login">

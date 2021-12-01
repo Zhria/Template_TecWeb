@@ -30,12 +30,12 @@ if(utente != null )
          
             <%// = isAdmin ? "<div><a href='/admin.jsp'>Admin</a></div>" : ""/%>
               
-            <li><a href='#[[\$]]#{pageContext.request.contextPath}/login/changePwd.jsp'>Change Password</a></li>
-            <li><a href='#[[\$]]#{pageContext.request.contextPath}/login/logout.jsp?type=LOG'>Logout</a></li>
+            <li><a href=<%=request.getContextPath()%>/pages/changePwd.jsp'>Change Password</a></li>
+            <li><a href='#[[\$]]#{pageContext.request.contextPath}/pages/logout.jsp?type=LOG'>Logout</a></li>
             <li class="nav-username" >Hello: <b><%=((Utente) request.getSession().getAttribute("utente")).getUsername()%></b></li>
         <% } else { %>
-            <li><a href='#[[\$]]#{pageContext.request.contextPath}/login/login.jsp?type=LOG'>Login</a></li>
-            <li><a href='#[[\$]]#{pageContext.request.contextPath}/login/login.jsp?type=REG'>Registrazione</a></li>
+            <li><a href='<%=request.getContextPath()%>/pages/login.jsp?type=LOG'>Login</a></li>
+            <li><a href='#[[\$]]#{pageContext.request.contextPath}/pages/login.jsp?type=REG'>Registrazione</a></li>
         <% } %>
 	</ul>
 
