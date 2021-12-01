@@ -50,7 +50,7 @@ public class ChangePasswordServlet extends HttpServlet {
 				}
 			}
 			if(okReg) {
-				utenti.addUtente(username, new_password);
+				utenti.addUtente("",username, new_password,0);
 				utenti.findUtente(username, new_password).setLogged(true);		
 				resp.sendRedirect("pages/welcome.jsp");//to redirect response to another resource, it may be servlet, jsp or html file.
 			}

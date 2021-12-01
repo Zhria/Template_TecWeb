@@ -3,7 +3,7 @@ function callLogin(){
 		username: $("#username").value,
 		password: $("#password").value
 		//email:
-	}
+	};
 
 	//document.getElementsByName("password")[0].value  
 	//document.getElementsByName("username")[0].value 
