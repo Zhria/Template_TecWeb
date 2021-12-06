@@ -19,10 +19,23 @@
 <body>
 
  <h1>Log in</h1>
-        Username: <input type="text" name="username" value=""><br>
-        Password: <input type="password" name="password" value=""><br>
-       <!--  Email: <input type="email" name="email" value=""><br> -->
-        <input type="submit" name="login" value="LOGIN" onclick="callLogin()">
+<form action="<%=request.getContextPath()%>/loginServlet" method=post>
+  
+  <div>
+            <label for="nome">Username:</label><br>
+            <input type="text" id="username" name="username" >
+
+        </div>
+
+        <div>
+            <label for="password">La tua password:</label><br>
+            <input type="password" id="password" name="password">
+        </div>
+  
+    <!--  Email: <input type="email" name="email" value=""><br> -->
+    <br><input type="submit" name="login" value="LOGIN">
+
+  </form>
         <form action="/signinservlet" method="post">
        		 <input type="submit" name="signin" value="SIGNIN">
         </form>

@@ -1,4 +1,4 @@
-<%@ page import="it.unibo.tw.beans.Utente" %>
+<%@ page import="beans.Utente" %>
 
 <%
 	Utente utente= (Utente) request.getSession().getAttribute("utente");

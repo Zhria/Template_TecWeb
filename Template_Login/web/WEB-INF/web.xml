@@ -9,38 +9,29 @@
 as a template for your owns </description>
 <!-- 2) Servlets -->
 <servlet>
-<servlet-name>HelloWorld</servlet-name>
-<servlet-class>
-it.unibo.tw.servlets.HelloWorldServlet
-</servlet-class>
-</servlet>
-<servlet>
 <servlet-name>LoginServlet</servlet-name>
 <servlet-class>
-it.unibo.tw.servlets.LoginServlet
+servlet.LoginServlet
 </servlet-class>
 </servlet>
 <servlet>
 <servlet-name>ChangePasswordServlet</servlet-name>
 <servlet-class>
-it.unibo.tw.servlets.ChangePasswordServlet
+servlet.ChangePasswordServlet
 </servlet-class>
 </servlet>
 
 <servlet>
 <servlet-name>RegistrazioneServlet</servlet-name>
 <servlet-class>
-it.unibo.tw.servlets.RegistrazioneServlet
+servlet.RegistrazioneServlet
 </servlet-class>
 </servlet>
 <!-- Map some URL's to the servlet -->
-<servlet-mapping>
-<servlet-name>HelloWorld</servlet-name>
-<url-pattern>/helloworld</url-pattern>
-</servlet-mapping>
+
 <servlet-mapping>
 <servlet-name>LoginServlet</servlet-name>
-<url-pattern>/loginservlet</url-pattern>
+<url-pattern>/loginServlet</url-pattern>
 </servlet-mapping>
 <servlet-mapping>
 <servlet-name>ChangePasswordServlet</servlet-name>

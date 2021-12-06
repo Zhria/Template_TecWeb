@@ -6,10 +6,9 @@
 </head>
 <body>
 <center>
-<h3>Attenzione!!! <b>I frameset sono deprecati!!!</b></h3>
-<i>In questa esercitazione li usiamo solo per praticit&agrave; di navigazione tra le pagine e per mantenere 'pulito' il DOM di ciascuna pagina
-mostrata nel frame principale. <br/>
-Ogni frame contiene infatti una pagina HTML ben formata che pu&ograve; anche essere aperta in una nuova finestra, interamente dedicata.
+<h3>&copy; Tecnologie Web T 2021</b></h3>
+<i>Credits to: <br/>
+RootLeo00, Zharia
 </i>
 </center>
 </body>

@@ -1,16 +1,3 @@
-<%@ page import="it.unibo.tw.beans.Utente" %>
-
-<%
-	Utente utente= (Utente) request.getSession().getAttribute("utente");
-    boolean isLoggedIn = false;
-    if(utente != null )
-    	if(utente.isLogged())
-    		isLoggedIn=true;
-
-    //Utente u = ((Utente) session.getAttribute("utente"));
-    //boolean isAdmin = u != null && u.getUsername().equals("admin");
-%>
-
 <style>
     .navbar div {
         margin: 20px;
@@ -37,15 +24,9 @@
         <div><a href="#[[\$]]#{pageContext.request.contextPath}/index.jsp">Home</a></div>
 
     <div class="spacer"></div>
-        <% if (isLoggedIn) { %>
-         
-            <%// = isAdmin ? "<div><a href='/admin.jsp'>Admin</a></div>" : ""/%>
               
             <div><a href='#[[\$]]#{pageContext.request.contextPath}/login/changePwd.jsp'>Change Password</a></div>
-            <div><a href='#[[\$]]#{pageContext.request.contextPath}/login/logout.jsp?type=LOG'>Logout</a></div>
-            <div class="nav-username" >Hello: <b><%=((Utente) request.getSession().getAttribute("utente")).getUsername()%></b></div>
-        <% } else { %>
+            <div><a href='#[[\$]]#{pageContext.request.contextPath}/login/logout.jsp'>Logout</a></div>
             <div><a href='#[[\$]]#{pageContext.request.contextPath}/login/login.jsp?type=LOG'>Login</a></div>
-            <div><a href='#[[\$]]#{pageContext.request.contextPath}/login/login.jsp?type=REG'>Registrazione</a></div>
-        <% } %>
+
 </div>

@@ -1,4 +1,4 @@
-package it.unibo.tw.beans;
+package beans;
 
 public class LoginJson {
 

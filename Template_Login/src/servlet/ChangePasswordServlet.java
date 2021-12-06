@@ -1,4 +1,4 @@
-package it.unibo.tw.servlets;
+package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.unibo.tw.beans.UtentiDB;
+import beans.UtentiDB;
 
 /**
  * This class is used for change password.

@@ -19,12 +19,21 @@
 <body>
 <div id="centerFrame" class="myDiv">
 			<br/>
-			<iframe name="header" src="<%=request.getContextPath()%>/fragments/header.jsp" ></iframe>
-			<iframe name="list" src="<%=request.getContextPath()%>/fragments/menu.jsp"></iframe>
-			<iframe name="content">
+			<div id="header">
+			<iframe name="header" src="<%=request.getContextPath()%>/fragments/header.jsp"></iframe>
+			</div>
+			
+			<div id="menu">
+			<iframe name="menu" src="<%=request.getContextPath()%>/fragments/menu.jsp"></iframe>
+			</div>
+			
+			<div id="main">
+			<iframe name="main">
 				<p>This is the home page of the project. You can navigate the project through a navbar or a menu</p>
 			</iframe>
-			<iframe name="content" src="<%=request.getContextPath()%>/fragments/footer.jsp"></iframe>
+			</div>
+
+			<iframe name="footer" src="<%=request.getContextPath()%>/fragments/footer.jsp"></iframe>
 		</div>
 </body>
 
