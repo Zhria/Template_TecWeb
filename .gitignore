@@ -40,3 +40,4 @@ Template_Login/build/exploded/Template_Login/WEB-INF/classes/it/unibo/tw/beans/U
 *.class
 *.class
 *.war
+Template_Login/build/archives/Template_Login.war

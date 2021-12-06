@@ -40,7 +40,7 @@ servlet.RegistrazioneServlet
 
 <servlet-mapping>
 <servlet-name>RegistrazioneServlet</servlet-name>
-<url-pattern>/registrazioneservlet</url-pattern>
+<url-pattern>/signinservlet</url-pattern>
 </servlet-mapping>
 <!-- 3) Welcome Files -->
 <!-- Define, in order of preference, which file to
