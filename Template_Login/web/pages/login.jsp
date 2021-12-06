@@ -19,7 +19,7 @@
 <body>
 
  <h1>Log in</h1>
-<form action="<%=request.getContextPath()%>/loginServlet" method=post>
+<form action="<%=request.getContextPath()%>/loginServlet" method="post">
   
   <div>
            <p>Log in using your username and password!</p>

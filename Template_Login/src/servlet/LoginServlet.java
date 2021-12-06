@@ -19,7 +19,7 @@ import beans.UtentiDB;
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	
+	private UtentiDB utenti;
 	//private Gson gson;
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,7 +29,12 @@ public class LoginServlet extends HttpServlet {
 		//gson=new Gson();
 		//Leggo il contenuto del dato in post	
 		//LoginJson log=gson.fromJson(req.getReader(), LoginJson.class);
-		UtentiDB utenti = new UtentiDB();
+		
+		utenti=(UtentiDB)req.getSession().getAttribute("utentiDB");
+		if(utenti==null) {
+			utenti=new UtentiDB();
+			req.getSession().setAttribute("utentiDB",utenti);
+		}
 		
 		String password=req.getParameter("password");
 		String username=req.getParameter("username");

@@ -22,13 +22,21 @@ public class RegistrazioneServlet extends HttpServlet {
 	private UtentiDB utenti;
 	@Override
 		public void init() throws ServletException {
-		utenti = new UtentiDB();;
+		
+		utenti = new UtentiDB();
 		}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
 		PrintWriter out=resp.getWriter();
+
+		utenti=(UtentiDB)req.getSession().getAttribute("utentiDB");
+		if(utenti==null) {
+			utenti=new UtentiDB();
+			req.getSession().setAttribute("utentiDB",utenti);
+		}
+		
 
 		//get parameters from request and check for null or empty values
 		String username= req.getParameter("username").trim();
