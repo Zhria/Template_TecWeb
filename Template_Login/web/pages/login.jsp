@@ -19,7 +19,7 @@
 <body>
 
  <h1>Log in</h1>
-<form action="<%=request.getContextPath()%>/loginServlet" method=post>
+<form action="<%=request.getContextPath()%>/loginServlet" method="post">
   
   <div>
            <p>Log in using your username and password!</p>
@@ -36,13 +36,19 @@
     <!--  Email: <input type="email" name="email" value=""><br> -->
     <br><input type="submit" name="login" value="LOGIN">
 
+	
   </form>
+  
+  
+  <form action="<%=request.getContextPath()%>/pages/changePwd.jsp" >
+			<button id="changePassword" value="forgot password?">forgot password?</button>		
+	</form>
+  
         <form action="<%=request.getContextPath()%>/signinservlet" method="post">
          <div>
          <p>Sign in if you don't have an account yet!</p>
             <label for="username">New Username:</label><br>
             <input type="text" id="username" name="username" >
-
         </div>
 
         <div>

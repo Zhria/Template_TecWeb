@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.Utente;
 import beans.UtentiDB;
 
 /**
@@ -38,21 +39,34 @@ public class ChangePasswordServlet extends HttpServlet {
 			requestDispatcher.include(req, resp);//Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
 		}
 		else {
-			UtentiDB utenti = new UtentiDB();
-			boolean okReg=true;
+			UtentiDB utenti = (UtentiDB)req.getSession().getAttribute("utentiDB");
 			//check for valid username or old_password
-			for(String name : utenti.getUsernames()) {
-				if(username.equals(name)) {
-					out.print("The username is already used! <br/><br/>");
+			for(Utente user : utenti.getUtenti()) {
+				if(user.getUsername().equals(username))
+				{
+					
+					if(user.getPassword().equals(old_password)) {
+						user.setPassword(new_password);
+						out.print("<strong>Password successfully changed!</strong> <br>");
+						RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/login.jsp");
+						requestDispatcher.include(req, resp);//Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
+						
+					}else{
+						//Password non matcha con quella presente nel db
+						out.print("The old password is incorrect! <br>");
+						RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/changePwd.jsp");
+						requestDispatcher.include(req, resp);//Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
+						
+						}
+					
+				}else {
+					//Utente non presente e/o sbagliato
+					out.print("Incorrect or Inexistent user! <br>");
 					RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/changePwd.jsp");
 					requestDispatcher.include(req, resp);//Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
-					okReg=false;
+					
 				}
-			}
-			if(okReg) {
-				utenti.addUtente("",username, new_password,0);
-				utenti.findUtente(username, new_password).setLogged(true);		
-				resp.sendRedirect("pages/welcome.jsp");//to redirect response to another resource, it may be servlet, jsp or html file.
+				
 			}
 			
 		}

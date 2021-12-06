@@ -5,5 +5,5 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/default.css" type="text/css"/>
 </head>
 <body>
-<h1 id="header">04_TecWeb project</h1>
+<h1 id="header">Template_Cate_E_Zak</h1>
 </body>

@@ -19,7 +19,7 @@ import beans.UtentiDB;
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	
+	private UtentiDB utenti;
 	//private Gson gson;
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,7 +29,14 @@ public class LoginServlet extends HttpServlet {
 		//gson=new Gson();
 		//Leggo il contenuto del dato in post	
 		//LoginJson log=gson.fromJson(req.getReader(), LoginJson.class);
-		UtentiDB utenti = new UtentiDB();
+		
+		utenti=(UtentiDB)this.getServletContext().getAttribute("utentiDB");
+		if(utenti==null) {
+			utenti=new UtentiDB();
+			this.getServletContext().setAttribute("utentiDB",utenti);
+		}
+		
+		//manca parte admin
 		
 		String password=req.getParameter("password");
 		String username=req.getParameter("username");
@@ -47,12 +54,16 @@ public class LoginServlet extends HttpServlet {
 				}
 				if(!utenti.findUtente(username, password).isLogged()) {
 					utenti.findUtente(username, password).setLogged(true);
+					req.getSession().setAttribute("username", username);
 					resp.sendRedirect(req.getContextPath()+"/pages/welcome.jsp"); //DA MODIFICARE
 					/*RequestDispatcher requestDispatcher = req.getRequestDispatcher(req.getContextPath()+"/pages/cart.jsp");
 					requestDispatcher.forward(req, resp);*/
 				}
 				else {
 					
+					RequestDispatcher requestDispatcher = req.getRequestDispatcher("/pages/login.jsp");
+					requestDispatcher.include(req, resp);
+					out.print("<p><strong>Already Logged<strong><p/><br/><br/>");
 				}
 				
 				

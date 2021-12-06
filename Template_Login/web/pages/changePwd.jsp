@@ -14,7 +14,7 @@
 
 <div>
     <h2>Cambia la password</h2>
-    <form action="changepassword" method="post">
+    <form action="<%=request.getContextPath()%>/changepassword" method="post">
         <label>
             Username:
             <input type="text" name="username"/>
@@ -29,6 +29,11 @@
         </label><br/>
         <input type="submit" />
     </form>
+ 
+ <form action="<%=request.getContextPath()%>/pages/login.jsp">
+ <button>Back...</button>
+ </form>   
+ 
 </div>
 </body>
 </html>
