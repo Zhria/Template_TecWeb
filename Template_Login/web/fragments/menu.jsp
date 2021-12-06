@@ -36,6 +36,7 @@ if(utente != null )
         <% } else { %>
             <li><a href='<%=request.getContextPath()%>/pages/login.jsp?type=LOG'>Login</a></li>
             <li><a href='#[[\$]]#{pageContext.request.contextPath}/pages/login.jsp?type=REG'>Registrazione</a></li>
+            <li><a href='<%=request.getContextPath()%>/logoutServlet'>Logout</a></li>
         <% } %>
 	</ul>
 

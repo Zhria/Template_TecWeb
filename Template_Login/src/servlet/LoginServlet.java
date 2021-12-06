@@ -30,10 +30,10 @@ public class LoginServlet extends HttpServlet {
 		//Leggo il contenuto del dato in post	
 		//LoginJson log=gson.fromJson(req.getReader(), LoginJson.class);
 		
-		utenti=(UtentiDB)req.getSession().getAttribute("utentiDB");
+		utenti=(UtentiDB)this.getServletContext().getAttribute("utentiDB");
 		if(utenti==null) {
 			utenti=new UtentiDB();
-			req.getSession().setAttribute("utentiDB",utenti);
+			this.getServletContext().setAttribute("utentiDB",utenti);
 		}
 		
 		String password=req.getParameter("password");
@@ -52,12 +52,16 @@ public class LoginServlet extends HttpServlet {
 				}
 				if(!utenti.findUtente(username, password).isLogged()) {
 					utenti.findUtente(username, password).setLogged(true);
+					req.getSession().setAttribute("username", username);
 					resp.sendRedirect(req.getContextPath()+"/pages/welcome.jsp"); //DA MODIFICARE
 					/*RequestDispatcher requestDispatcher = req.getRequestDispatcher(req.getContextPath()+"/pages/cart.jsp");
 					requestDispatcher.forward(req, resp);*/
 				}
 				else {
 					
+					RequestDispatcher requestDispatcher = req.getRequestDispatcher("/pages/welcome.jsp");
+					requestDispatcher.include(req, resp);
+					out.print("<p><strong>Already Logged<strong><p/><br/><br/>");
 				}
 				
 				

@@ -9,14 +9,14 @@
 <html>
 <head>
     <title>Logout</title>
-    <script>
+   <!-- <script>
         window.onload = () => {
             document.getElementById("form").submit()
         }
-    </script>
+    </script>  --> 
 </head>
 <body>
-        <form id="form" action="pages/login.html" method="post">
+        <form  action="pages/login.html" method="post">
             <input type="button" value="LOGOUT" onclick='alert("Are you sure you want to logout?");'>
         </form>
 </body>

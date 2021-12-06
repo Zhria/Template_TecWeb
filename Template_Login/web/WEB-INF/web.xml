@@ -27,7 +27,19 @@ servlet.ChangePasswordServlet
 servlet.RegistrazioneServlet
 </servlet-class>
 </servlet>
+
+<servlet>
+<servlet-name>LogoutServlet</servlet-name>
+<servlet-class>
+servlet.LogoutServlet
+</servlet-class>
+</servlet>
 <!-- Map some URL's to the servlet -->
+
+<servlet-mapping>
+<servlet-name>LogoutServlet</servlet-name>
+<url-pattern>/logoutServlet</url-pattern>
+</servlet-mapping>
 
 <servlet-mapping>
 <servlet-name>LoginServlet</servlet-name>

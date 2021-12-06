@@ -9,11 +9,11 @@
 <html>
 <head>
     <title>Logout</title>
-    <script>
+   <!-- <script>
         window.onload = () => {
             document.getElementById("form").submit()
         }
-    </script>
+    </script>  --> 
 </head>
 <body>
         <form  action="pages/login.html" method="post">

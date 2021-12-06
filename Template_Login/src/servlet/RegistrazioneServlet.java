@@ -31,10 +31,10 @@ public class RegistrazioneServlet extends HttpServlet {
 		resp.setContentType("text/html");
 		PrintWriter out=resp.getWriter();
 
-		utenti=(UtentiDB)req.getSession().getAttribute("utentiDB");
+		utenti=(UtentiDB)this.getServletContext().getAttribute("utentiDB");
 		if(utenti==null) {
 			utenti=new UtentiDB();
-			req.getSession().setAttribute("utentiDB",utenti);
+			this.getServletContext().setAttribute("utentiDB",utenti);
 		}
 		
 
