@@ -36,6 +36,8 @@ public class LoginServlet extends HttpServlet {
 			this.getServletContext().setAttribute("utentiDB",utenti);
 		}
 		
+		//manca parte admin
+		
 		String password=req.getParameter("password");
 		String username=req.getParameter("username");
 		//int tentativi=0;

@@ -32,7 +32,7 @@
 			
 			<div id="main" class="right">
 			<div id="error" class="err"></div>
-			<iframe name="main" src="https://www.google.it"></iframe>
+			<iframe name="main" src="http://localhost:8080"></iframe>
 			</div>
 
 			
