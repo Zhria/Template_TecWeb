@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN' 'http://java.sun.com/dtd/web-app_2_3.dtd'>
+
+<web-app>
+<!-- 1) General -->
+<!-- Name the application -->
+<display-name>Template_Login</display-name>
+<description> A servlet-based project to use
+as a template for your owns </description>
+<!-- 2) Servlets -->
+<servlet>
+<servlet-name>LoginServlet</servlet-name>
+<servlet-class>
+servlet.LoginServlet
+</servlet-class>
+</servlet>
+<servlet>
+<servlet-name>ChangePasswordServlet</servlet-name>
+<servlet-class>
+servlet.ChangePasswordServlet
+</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>RegistrazioneServlet</servlet-name>
+<servlet-class>
+servlet.RegistrazioneServlet
+</servlet-class>
+</servlet>
+<!-- Map some URL's to the servlet -->
+
+<servlet-mapping>
+<servlet-name>LoginServlet</servlet-name>
+<url-pattern>/loginServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+<servlet-name>ChangePasswordServlet</servlet-name>
+<url-pattern>/changepassword</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>RegistrazioneServlet</servlet-name>
+<url-pattern>/registrazioneservlet</url-pattern>
+</servlet-mapping>
+<!-- 3) Welcome Files -->
+<!-- Define, in order of preference, which file to
+show when no filename is defined in the path -->
+<welcome-file-list>
+<welcome-file>/pages/login.jsp</welcome-file>
+</welcome-file-list>
+<!-- 4) Error Handler -->
+<!-- Define an error handler for 404 pages -->
+<error-page>
+<error-code>404</error-code>
+<location>/errors/notfound.html</location>
+</error-page>
+<!-- Define an handler for java.lang.Exception -->
+<error-page>
+<exception-type>
+java.lang.Exception
+</exception-type>
+<location>/errors/exception.html</location>
+</error-page>
+</web-app>
