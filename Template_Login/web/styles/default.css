@@ -6,7 +6,7 @@ body {
  background-color:pink;
 }
 
-#err {
+.err {
 	border: 2px solid grey;
 	margin-left: 2px;
 	margin-right: 2px;

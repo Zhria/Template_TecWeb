@@ -3,51 +3,10 @@ body {
  font-size: 9pt;
  background: #FFF;
  color: #000;
+ background-color:pink;
 }
 
-h1 {
- font-size: 12pt;
- border-bottom: 1px solid silver;
- color: #009;
- text-align: center;
-}
-
-#menu {
-	color: blue;
-	margin: 2px;
-}
-
-#tabs li {
-	background-color: white;
-	margin-right: 2px;
-	padding: 5px;
-	list-style-type: none;
-	float: left;
-	border-top: grey solid 2px;
-	border-right: grey solid 2px;
-	border-left: grey solid 2px;
-	border-bottom: none;
-	height: 18px;
-}
-
-#tabs li a {
-	text-decoration: none;
-}	
-
-.clear {
-	clear: both;
-}
-
-
-#main {
-	border: 2px solid grey;
-	margin-left: 2px;
-	margin-right: 2px;
-	padding: 5px;
-	text-align: left;
-}
-
-#err {
+.err {
 	border: 2px solid grey;
 	margin-left: 2px;
 	margin-right: 2px;
@@ -57,15 +16,6 @@ h1 {
 	color: white;
 }
 
-#footer {
-	position: absolute;
-	width: 97%;
-	border: 2px solid grey;
-	margin: 2px;
-	padding: 5px;
-	bottom: 5px;
-	text-align: center;
-}
 
 /*
 look and feel da foglio di calcolo
@@ -112,4 +62,60 @@ table.formdata input, textarea {
 
 a img {
 	border: 0px solid;
+}
+
+[name="header"]{
+	 font-size: 12pt;
+ border-bottom: 1px solid silver;
+	height:10%;
+	width:100%;
+}
+	#header{
+color: #009;
+ text-align: center;
+	}
+
+[name="menu"] {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 14em ;
+  height:70%
+  }
+  /* Create a column layout with Flexbox */
+.row {
+  display: flex;
+}
+/* Right column (page content) */
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+
+[name="menu_list"] li{
+	 font-family: Verdana, Helvetica, sans-serif;
+ background: lightcoral;
+  margin: 0.5em 0;
+  padding: 0.3em;
+  border-right: 1em solid violet }
+
+
+[name="footer"]{
+	position: absolute;
+	width: 100%;
+	height: 6em;
+	border: 2px solid grey;
+	margin: 2px;
+	padding: 5px;
+	bottom: 5px;
+	text-align: center;
+}
+
+[name="main"]{
+padding-left: 11em;
+height:73%;
+width:100%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: purple;
+  background-color: #d8da3d
 }

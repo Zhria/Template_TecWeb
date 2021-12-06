@@ -23,12 +23,11 @@
 			<div id="header">
 			<iframe name="header" src="<%=request.getContextPath()%>/fragments/header.jsp"></iframe>
 			</div>
+			<div class="error"></div>
 			
 			<div class="left">
-			<div class="row">
 			<div id="menu">
 			<%@ include file="../fragments/menu.jsp" %>
-			</div>
 			</div>
 			</div>
 			
