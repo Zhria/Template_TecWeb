@@ -25,20 +25,17 @@
 			</div>
 			
 			<div class="left">
-			<div class="row">
 			<div id="menu">
 			<%@ include file="../fragments/menu.jsp" %>
 			</div>
 			</div>
-			</div>
 			
-			<div class="right">
-			<div id="main">
-			<iframe name="main">
-				<p>This is the home page of the project. You can navigate the project through a navbar or a menu</p>
-			</iframe>
+			<div id="main" class="right">
+			<div id="error" class="err"></div>
+			<iframe name="main" src="https://www.google.it"></iframe>
 			</div>
-			</div>
+
+			
 			<iframe name="footer" src="<%=request.getContextPath()%>/fragments/footer.jsp"></iframe>
 		</div>
 </body>

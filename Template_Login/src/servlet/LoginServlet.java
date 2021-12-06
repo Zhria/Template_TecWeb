@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
 				}
 				else {
 					
-					RequestDispatcher requestDispatcher = req.getRequestDispatcher("/pages/welcome.jsp");
+					RequestDispatcher requestDispatcher = req.getRequestDispatcher("/pages/login.jsp");
 					requestDispatcher.include(req, resp);
 					out.print("<p><strong>Already Logged<strong><p/><br/><br/>");
 				}
