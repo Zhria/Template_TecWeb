@@ -19,6 +19,11 @@ import beans.UtentiDB;
 public class RegistrazioneServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	private UtentiDB utenti;
+	@Override
+		public void init() throws ServletException {
+		utenti = new UtentiDB();;
+		}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,17 +42,19 @@ public class RegistrazioneServlet extends HttpServlet {
 		}
 		else {
 			//check for not used username
-			if(!username.equals("username1")) {
-				UtentiDB utenti = new UtentiDB();
-				utenti.addUtente("",username, password,0);
-				utenti.findUtente(username, password).setLogged(true);		
-				resp.sendRedirect("pages/welcome.jsp");//to redirect response to another resource, it may be servlet, jsp or html file.
+			for(String u: utenti.getUsernames()) {
+				if(!u.equals(username)) {
+					utenti.addUtente("",username, password,0);
+					utenti.findUtente(username, password).setLogged(true);		
+					resp.sendRedirect("pages/welcome.jsp");//to redirect response to another resource, it may be servlet, jsp or html file.
+				}
+				else {
+					out.print("Already used username! <br/><br/>");
+					RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/login.jsp");
+					requestDispatcher.include(req, resp);//Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
+				}
 			}
-			else {
-				out.print("Already used username! <br/><br/>");
-				RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/login.jsp");
-				requestDispatcher.include(req, resp);//Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
-			}
+			
 		}
 
 	}

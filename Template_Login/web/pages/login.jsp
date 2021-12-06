@@ -22,13 +22,14 @@
 <form action="<%=request.getContextPath()%>/loginServlet" method=post>
   
   <div>
-            <label for="nome">Username:</label><br>
+           <p>Log in using your username and password!</p>
+            <label for="nome">Your username:</label><br>
             <input type="text" id="username" name="username" >
 
         </div>
 
         <div>
-            <label for="password">La tua password:</label><br>
+            <label for="password">Your password:</label><br>
             <input type="password" id="password" name="password">
         </div>
   
@@ -36,8 +37,21 @@
     <br><input type="submit" name="login" value="LOGIN">
 
   </form>
-        <form action="/signinservlet" method="post">
-       		 <input type="submit" name="signin" value="SIGNIN">
+        <form action="<%=request.getContextPath()%>/signinservlet" method="post">
+         <div>
+         <p>Sign in if you don't have an account yet!</p>
+            <label for="username">New Username:</label><br>
+            <input type="text" id="username" name="username" >
+
+        </div>
+
+        <div>
+            <label for="password">New password:</label><br>
+            <input type="password" id="password" name="password">
+                <!--  Email: <input type="email" name="email" value=""><br> -->
+        </div>
+  
+       		<br><input type="submit" name="signin" value="SIGNIN">
         </form>
         
 </body>
