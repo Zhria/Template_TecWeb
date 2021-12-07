@@ -8,13 +8,24 @@
 <!DOCTYPE HTML PUBLIC >
 <html>
 <head>
-    <title><%=pageContext.getServletContext().getInitParameter("titolo")%></title>
+    <title>Cambia Password</title>
 </head>
 <body>
 
+<%
+String res="";
+if((res=(String)request.getAttribute("result"))==null){
+	res="";
+}
+%>
+
+<p><%=res%></p>
+
+
 <div>
     <h2>Cambia la password</h2>
-    <form action="<%=request.getContextPath()%>/changepassword" method="post">
+    <p>Ricorda che per poter cambiare la password devi conoscere quella vecchia</p>
+    <form action="<%=request.getContextPath()%>/changePassword" method="post">
         <label>
             Username:
             <input type="text" name="username"/>
@@ -31,7 +42,7 @@
     </form>
  
  <form action="<%=request.getContextPath()%>/pages/login.jsp">
- <button>Back...</button>
+ <button>Back</button>
  </form>   
  
 </div>

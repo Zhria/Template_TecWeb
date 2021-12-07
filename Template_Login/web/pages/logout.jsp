@@ -16,6 +16,7 @@
     </script>  --> 
 </head>
 <body>
+<!--  NON NECESSARIA PER LA LOGIN FATTA -->
         <form  action="pages/login.html" method="post">
             <input type="button" value="LOGOUT" onclick='alert("Are you sure you want to logout?");'>
         </form>
