@@ -1,5 +1,7 @@
 package beans;
 
+
+//INUTILIZZATA
 public class LoginJson {
 
 	public String username;

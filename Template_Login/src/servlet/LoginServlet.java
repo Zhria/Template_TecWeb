@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
-		PrintWriter out=resp.getWriter();
+		//PrintWriter out=resp.getWriter();
 		//Utilizziamo post quindi leggo dal reader
 		//gson=new Gson();
 		//Leggo il contenuto del dato in post	
@@ -36,12 +36,15 @@ public class LoginServlet extends HttpServlet {
 			this.getServletContext().setAttribute("utentiDB",utenti);
 		}
 		
-		//manca parte admin
+		//manca parte admin--> Aggiunta
 		
 		String password=req.getParameter("password");
 		String username=req.getParameter("username");
 		//int tentativi=0;
 		//int numMaxTentativi=3;
+		
+		
+		
 		
 		//se esiste l'id ma la password � sbagliata e non accede allora aumenta i tentativi
 		if(utenti.getUsernames().contains(username)) {
@@ -51,27 +54,37 @@ public class LoginServlet extends HttpServlet {
 				//Username e password corretti
 				if(username.equals("admin") && password.equals("admin")) {
 					utenti.findUtente(username, password).setAdmin(true);
+					utenti.findUtente(username, password).setLogged(true);
+					req.getSession().setAttribute("username", username);
+					
+					resp.sendRedirect(req.getContextPath()+"/pages/admin.jsp");
+						return;
+					
 				}
 				if(!utenti.findUtente(username, password).isLogged()) {
 					utenti.findUtente(username, password).setLogged(true);
 					req.getSession().setAttribute("username", username);
-					resp.sendRedirect(req.getContextPath()+"/pages/welcome.jsp"); //DA MODIFICARE
+					resp.sendRedirect(req.getContextPath()+"/pages/welcome.jsp");
+					return;//DA MODIFICARE
 					/*RequestDispatcher requestDispatcher = req.getRequestDispatcher(req.getContextPath()+"/pages/cart.jsp");
 					requestDispatcher.forward(req, resp);*/
 				}
 				else {
-					
+					req.setAttribute("result","<p><strong>Already Logged<strong><p/><br/><br/>");
 					RequestDispatcher requestDispatcher = req.getRequestDispatcher("/pages/login.jsp");
-					requestDispatcher.include(req, resp);
-					out.print("<p><strong>Already Logged<strong><p/><br/><br/>");
+					requestDispatcher.forward(req, resp);
+					return;
+					
 				}
 				
 				
 			}
 			else {
+				req.setAttribute("result","<p><strong>PASSWORD ERRATA<strong><p/><br/><br/>");
 				RequestDispatcher requestDispatcher = req.getRequestDispatcher("/pages/login.jsp");
-				requestDispatcher.include(req, resp);
-				out.print("<p><strong>PASSWORD ERRATA<strong><p/><br/><br/>");
+				requestDispatcher.forward(req, resp);
+				return;
+				//out.print("<p><strong>PASSWORD ERRATA<strong><p/><br/><br/>");
 				//tentativi++;
 				//if(tentativi>=numMaxTentativi) {
 				//	resp.sendRedirect("pages/access_denied.html"); //DA MODIFICARE
@@ -82,10 +95,11 @@ public class LoginServlet extends HttpServlet {
 			}
 		}
 		else {
-			
+			req.setAttribute("result", "<p><strong>Non esiste questo utente<strong><p/><br/><br/>");
 			RequestDispatcher requestDispatcher = req.getRequestDispatcher("/pages/login.jsp");
-			requestDispatcher.include(req, resp);
-			out.print("<p><strong>Non esiste questo utente<strong><p/><br/><br/>");
+			requestDispatcher.forward(req, resp);
+			return;
+			//out.print("<p><strong>Non esiste questo utente<strong><p/><br/><br/>");
 		}
 		
 		

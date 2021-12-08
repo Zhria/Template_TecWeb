@@ -44,7 +44,7 @@ public class RegistrazioneServlet extends HttpServlet {
 
 		//check for null or empty password or username
 		if(password==null|| password.equals("")||username==null || username.equals("")) {
-			out.print("Please enter both username and password. <br/><br/>");
+			req.setAttribute("result","Please enter both username and password. <br/><br/>");
 			RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/login.jsp");
 			requestDispatcher.include(req, resp);//Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
 		}
@@ -52,14 +52,15 @@ public class RegistrazioneServlet extends HttpServlet {
 			//check for not used username
 			for(String u: utenti.getUsernames()) {
 				if(!u.equals(username)) {
-					utenti.addUtente("",username, password,0);
+					utenti.addUtente("Ci_sarebbe_la_Mail",username, password,0);
 					utenti.findUtente(username, password).setLogged(true);		
+					req.getSession().setAttribute("username", username);
 					resp.sendRedirect("pages/welcome.jsp");//to redirect response to another resource, it may be servlet, jsp or html file.
 				}
 				else {
-					out.print("Already used username! <br/><br/>");
+					req.setAttribute("result","Already used username! <br/><br/>");
 					RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/login.jsp");
-					requestDispatcher.include(req, resp);//Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
+					requestDispatcher.forward(req, resp);//Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
 				}
 			}
 			

@@ -4,6 +4,7 @@
 <!-- accesso alla sessione -->
 <%@ page session="true"%>
 
+
 <!-- codice html restituito al client -->
 <!DOCTYPE HTML PUBLIC>
 <html>
@@ -17,6 +18,15 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/styles/default.css" type="text/css" />
 </head>
 <body>
+
+<%
+String res="";
+if((res=(String)request.getAttribute("result"))==null){
+	res="";
+}
+%>
+
+<p><%=res%></p>
 
  <h1>Log in</h1>
 <form action="<%=request.getContextPath()%>/loginServlet" method="post">
