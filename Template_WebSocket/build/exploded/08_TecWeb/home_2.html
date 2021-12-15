@@ -1,0 +1,32 @@
+
+<html>
+    <head>
+        <title>Calcolatrice</title>
+         <script type="text/javascript" src="scripts/wsocket_2.js"></script>
+         <link type="text/css" href="styles/default.css" rel="stylesheet">
+    </head>
+    <body>
+        <!--metto dei controlli js sul bottone
+        non uso form! uso connessione-->
+        
+        <div>
+ 			<input type="text" id="op1" onkeyup="functionUpdate('op1')"><br>
+             <input type="text" id="op2" onkeyup="functionUpdate('op2')"><br>
+            <div>
+                Scegli Operando: <br>
+                <input type="checkbox" name="op" value ="+" >+<br> 
+                <input type="checkbox" name="op" value ="-" >-<br> 
+                <input type="checkbox" name="op" value ="/" >/<br> 
+                <input type="checkbox" name="op" value ="x" >x<br>
+            </div>
+            <input type="button" value="calcola" onClick="myFunction()"><br/>
+             Risultato: <input type="text" id="risultato" value ="" readonly= "true" ><br> 
+ 		</div>
+
+
+    	
+    </body>
+
+   
+
+</html>
